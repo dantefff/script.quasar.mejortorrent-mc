@@ -109,8 +109,8 @@ def search_episode(info):
 def search_season(info):
     provider.log.info(info)
     info["type"] = "show"
-    info["query"] = info['title'].encode('utf-8') + ' %s %s' % (
-        common.season_names[settings.value.get("language", "es")], info['season'])  # define query
+    info["query"] = info['title'].encode('utf-8') + ' - %sª %s' % (
+        info['season'] ,common.season_names[settings.value.get("language", "es")])  # define query
     return search_general(info)
 
 
